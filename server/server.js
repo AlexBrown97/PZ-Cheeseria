@@ -8,11 +8,10 @@ const cheeses = [
     colour:
       "Arguably the most famous Spanish cheese, Manchego varies from white to ivory-yellow, and the inedible rind from yellow to brownish-beige.",
     image:
-      "https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/512/512/true/eyJpZCI6IjNiM2I3ODcxN2Y3ZTQ2YjI1ZWJhZjMxMDNjZTU3ZTYyLmpwZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=18245515af0a61606e87f3787dad0ede24db2107b97817860b079c70e8d9b09a",
+      "https://www.seriouseats.com/thmb/xezzwf8xlReX5LThOTra0yrXU9E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2017__08__20170810-manchego-cheese-gran-queso-vicky-wasik-5-a8a2e66efce24e99a7b339892c68c98d.jpg",
   },
   {
     name: "Brie",
-    picture: "",
     price: 55,
     colour:
       "Named after the French region from which it originated, Brie is pale in color with a slight grayish tinge under a rind of white mould.",
@@ -21,7 +20,6 @@ const cheeses = [
   },
   {
     name: "Red Leicester",
-    picture: "",
     price: 50,
     colour:
       "Originating in England, Red Leicester is colored with a vegetable dye called annatto, which gives the cheese its distinctive deep-orange hue.",
@@ -30,7 +28,6 @@ const cheeses = [
   },
   {
     name: "Feta",
-    picture: "",
     price: 40,
     colour:
       "Feta is a Greek brined white cheese made from sheep's milk or from a mixture of sheep and goat's milk.",
@@ -39,10 +36,9 @@ const cheeses = [
   },
   {
     name: "Cheddar",
-    picture: "",
     price: 60,
     colour:
-      "This famour Somerset cheese can be a deep to pale yellow colour, or a yellow-orange colour when certain plant extracts are added, such as beet juice. ",
+      "This Somerset cheese can be a deep to pale yellow colour, or a yellow-orange colour when certain plant extracts are added. ",
     image:
       "https://www.tasteofhome.com/wp-content/uploads/2022/09/GettyImages-470340853.jpg",
   },
@@ -51,6 +47,19 @@ const cheeses = [
 app.get("/api", (req, res) => {
   res.json({ cheeses });
 });
+// app.post("/cheese", function (req, res) {
+//   const newCheese = {
+//     name: req.body.name,
+//     price: req.body.price,
+//     colour: req.body.colour,
+//     image: req.body.image,
+//   };
+//   cheeses.push(newCheese);
+//   res.type("json");
+//   res.send({ message: "Post Successful" });
+//   console.log(cheeses);
+// });
+app.all("*", (req, res) => res.send("That route does not exist"));
 
 app.listen(3000, () => {
   console.log("Server started on port 3000");

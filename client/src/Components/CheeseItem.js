@@ -3,9 +3,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
-import { IconButton } from "@mui/material";
-import { Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
+
 const CheeseItem = (props) => {
   return (
     <div>
