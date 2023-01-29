@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Card.css";
 import CheeseItem from "./CheeseItem";
 import { Container, Grid } from "@mui/material";
+import CalculatorInput from "./CalculatorInput";
 
 export const Cheeses = () => {
   const [backendData, setBackendData] = useState({});
@@ -44,6 +45,7 @@ export const Cheeses = () => {
           </Grid>
         ))}
       </Grid>
+      <CalculatorInput cheeses={backendData.cheeses} />
     </Container>
   );
 };

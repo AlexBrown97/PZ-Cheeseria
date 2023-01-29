@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 const CheeseItem = (props) => {
   return (
     <div>
-      <Card>
+      <Card style={{ backgroundColor: "	#FFFACD" }}>
         <CardHeader title={props.name} subheader={`£${props.price} /Kg`} />
         <CardMedia
           component="img"
@@ -26,17 +26,3 @@ const CheeseItem = (props) => {
   );
 };
 export default CheeseItem;
-
-// return (
-//     <div>
-//       <h2>{props.name}</h2>
-//       <h3>Price per kilo: £{props.price} /Kg</h3>
-//       <h3>Colour: {props.colour}</h3>
-//       <img
-//         src={props.image}
-//         style={{ width: 200, height: 200, borderRadius: 30 }}
-//         alt="hello"
-//       ></img>
-//     </div>
-//   );
-// };
