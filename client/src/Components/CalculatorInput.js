@@ -1,21 +1,29 @@
 import { useState } from "react";
 import { CalculatorResult } from "./CalculatorResult";
 import styled from "styled-components";
-import { border, width } from "@mui/system";
 
 const Input = styled.input`
   font-size: 18px;
   padding: 10px;
   margin: 10px;
-  background: #fffacd;
+  background: #fff081;
   border-radius: 5px;
   border: 1px solid black;
 `;
 
-const StyledForm = styled.section`
-backgroundColor:#FFFACD";
-width: 250;
-border: 2 solid black
+const StyledHeader = styled.h2`
+  color: #ffab02;
+  text-shadow: 1px 1px 1px grey;
+`;
+
+const StyledForm = styled.form`
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fffacd;
+  width: 310px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 `;
 
 const CalculatorInput = (props) => {
@@ -32,18 +40,24 @@ const CalculatorInput = (props) => {
 
   return (
     <div>
-      <h2>Cheese Calculator</h2>
-      <form
-        style={{
-          backgroundColor: "	#FFFACD",
-          width: 310,
-          paddingTop: 5,
-          paddingLeft: 10,
-          paddingBottom: 10,
-        }}
-      >
+      <StyledHeader>
+        <span role="img" aria-label="cheese">
+          💲
+        </span>
+        Cost Calculator
+        <span role="img" aria-label="cheese">
+          💲
+        </span>
+      </StyledHeader>
+      <StyledForm>
         <div>
-          <select>
+          <select
+            style={{
+              marginLeft: "90px",
+              fontSize: "20px",
+              borderRadius: "5px",
+            }}
+          >
             {props.cheeses?.map((cheese, i) => {
               return (
                 <option
@@ -57,14 +71,14 @@ const CalculatorInput = (props) => {
             })}
           </select>
         </div>
-        <label>Weight(g)</label>
+        <label style={{ fontWeight: "bold" }}>Weight(g)</label>
         <Input
           value={enteredCheeseWeight}
           type="number"
           onChange={weightChangeHandler}
         />
         <CalculatorResult inputWeight={enteredCheeseWeight} />
-      </form>
+      </StyledForm>
     </div>
   );
 };

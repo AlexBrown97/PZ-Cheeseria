@@ -4,7 +4,7 @@ const app = express();
 const cheeses = [
   {
     name: "Manchego",
-    price: 90,
+    price: 50,
     colour:
       "Arguably the most famous Spanish cheese, Manchego varies from white to ivory-yellow, and the inedible rind from yellow to brownish-beige.",
     image:
@@ -53,9 +53,17 @@ const cheeses = [
   },
 ];
 
-app.get("/api", (req, res) => {
+server = app.get("/api", (req, res) => {
   res.json({ cheeses });
 });
+app.all("*", (req, res) => res.send("That route does not exist"));
+
+app.listen(3000, () => {
+  console.log("Server started on port 3000");
+});
+
+// Started setting up a post request had it not been for the routing errors:
+
 // app.post("/cheese", function (req, res) {
 //   const newCheese = {
 //     name: req.body.name,
@@ -68,8 +76,3 @@ app.get("/api", (req, res) => {
 //   res.send({ message: "Post Successful" });
 //   console.log(cheeses);
 // });
-app.all("*", (req, res) => res.send("That route does not exist"));
-
-app.listen(3000, () => {
-  console.log("Server started on port 3000");
-});
