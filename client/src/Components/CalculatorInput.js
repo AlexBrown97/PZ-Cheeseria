@@ -13,7 +13,8 @@ const Input = styled.input`
 
 const StyledHeader = styled.h2`
   color: #ffab02;
-  text-shadow: 1px 1px 1px grey;
+  font-family: monospace;
+  font-size: 30px;
 `;
 
 const StyledForm = styled.form`
