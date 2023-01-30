@@ -3,13 +3,13 @@
 ## Getting Started
 
 1. Clone the repository:
-   `<git clone https://github.com/AlexBrown97/PZ-Cheeseria.git>`
+   `git clone https://github.com/AlexBrown97/PZ-Cheeseria.git`
 
-2. Install required modules: `<npm i>`
+2. Install required modules: `npm i`
 
-3. Run the server `<cd server>` ➡️ `<npm run dev>` (localhost:3000)
+3. Run the server `cd server` ➡️ `npm run dev` (localhost:3000)
 
-4. Start the client `<cd client>` ➡️ `<npm start>` (localhost:3001)
+4. Start the client `cd client` ➡️ `npm start` (localhost:3001)
 
 ### Task:
 
