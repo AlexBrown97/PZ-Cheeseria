@@ -42,6 +42,9 @@ const cheeses = [
       "Feta is a Greek brined white cheese made from sheep's milk or from a mixture of sheep and goat's milk.",
     image:
       "https://tarasmulticulturaltable.com/wp-content/uploads/2015/01/Feta-with-Oregano-2-of-4.jpg",
+    calculation: {
+      feta: 40,
+    },
   },
   {
     name: "Cheddar",
@@ -50,6 +53,9 @@ const cheeses = [
       "This Somerset cheese can be a deep to pale yellow colour, or a yellow-orange colour when certain plant extracts are added. ",
     image:
       "https://www.tasteofhome.com/wp-content/uploads/2022/09/GettyImages-470340853.jpg",
+    calculation: {
+      cheddar: 60,
+    },
   },
 ];
 
@@ -61,18 +67,3 @@ app.all("*", (req, res) => res.send("That route does not exist"));
 app.listen(3000, () => {
   console.log("Server started on port 3000");
 });
-
-// Started setting up a post request had it not been for the routing errors:
-
-// app.post("/cheese", function (req, res) {
-//   const newCheese = {
-//     name: req.body.name,
-//     price: req.body.price,
-//     colour: req.body.colour,
-//     image: req.body.image,
-//   };
-//   cheeses.push(newCheese);
-//   res.type("json");
-//   res.send({ message: "Post Successful" });
-//   console.log(cheeses);
-// });

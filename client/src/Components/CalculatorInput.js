@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CalculatorResult } from "./CalculatorResult";
 import styled from "styled-components";
 
-const Input = styled.input`
+const StyledInput = styled.input`
   font-size: 18px;
   padding: 10px;
   margin: 10px;
@@ -73,12 +73,15 @@ const CalculatorInput = (props) => {
           </select>
         </div>
         <label style={{ fontWeight: "bold" }}>Weight(g)</label>
-        <Input
+        <StyledInput
+          onChange={weightChangeHandler}
           value={enteredCheeseWeight}
           type="number"
-          onChange={weightChangeHandler}
         />
-        <CalculatorResult inputWeight={enteredCheeseWeight} />
+        <CalculatorResult
+          inputWeight={enteredCheeseWeight}
+          selectedCheese={selectedCheese}
+        />
       </StyledForm>
     </div>
   );
