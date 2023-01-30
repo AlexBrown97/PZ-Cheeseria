@@ -18,3 +18,6 @@ describe("api", () => {
     });
   });
 });
+
+// *IMPROVEMENTS WITH MORE TIME*
+// Add more test cases and import React Testing Library to test the components
